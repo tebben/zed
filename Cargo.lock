@@ -8650,26 +8650,6 @@ dependencies = [
  "gpui",
  "language",
  "project",
- "schemars 1.0.4",
- "serde",
- "settings",
- "theme",
- "ui",
- "util",
- "workspace",
- "zed_actions",
-]
-
-[[package]]
-name = "jump"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "collections",
- "editor",
- "gpui",
- "language",
- "project",
  "schemars",
  "serde",
  "settings",
@@ -21281,7 +21261,6 @@ dependencies = [
  "itertools 0.14.0",
  "journal",
  "json_schema_store",
- "jump",
  "jump",
  "keymap_editor",
  "language",

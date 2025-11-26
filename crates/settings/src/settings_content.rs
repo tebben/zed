@@ -473,12 +473,7 @@ pub struct CallSettingsContent {
     pub share_on_join: Option<bool>,
 }
 
-<<<<<<< HEAD
 #[with_fallible_options]
-=======
->>>>>>> origin/feature/jump
-/// Configuration of jump navigation in Zed.
-#[skip_serializing_none]
 #[derive(Clone, PartialEq, Default, Serialize, Deserialize, JsonSchema, MergeFrom, Debug)]
 pub struct JumpSettingsContent {
     /// Whether to automatically jump when only one match is found.
@@ -487,7 +482,7 @@ pub struct JumpSettingsContent {
     pub autojump: Option<bool>,
 }
 
-#[skip_serializing_none]
+#[with_fallible_options]
 #[derive(Clone, PartialEq, Default, Serialize, Deserialize, JsonSchema, MergeFrom, Debug)]
 pub struct GitPanelSettingsContent {
     /// Whether to show the panel button in the status bar.
