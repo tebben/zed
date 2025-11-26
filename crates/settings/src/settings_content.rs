@@ -473,7 +473,10 @@ pub struct CallSettingsContent {
     pub share_on_join: Option<bool>,
 }
 
+<<<<<<< HEAD
 #[with_fallible_options]
+=======
+>>>>>>> origin/feature/jump
 /// Configuration of jump navigation in Zed.
 #[skip_serializing_none]
 #[derive(Clone, PartialEq, Default, Serialize, Deserialize, JsonSchema, MergeFrom, Debug)]

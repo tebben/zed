@@ -1,9 +1,13 @@
 mod jump_settings;
 
+<<<<<<< HEAD
 use editor::{
     DisplayPoint, Editor, EditorEvent, JumpLabel, MultiBufferOffset, ToPoint,
     display_map::ToDisplayPoint,
 };
+=======
+use editor::{DisplayPoint, Editor, EditorEvent, JumpLabel, ToPoint, display_map::ToDisplayPoint};
+>>>>>>> origin/feature/jump
 use gpui::{
     Action, App, Context, DismissEvent, Entity, EventEmitter, Focusable, IntoElement, Render,
     Styled, Window, div,
@@ -376,9 +380,15 @@ impl JumpBar {
                 let bytes = text.as_bytes();
 
                 // Only search within the visible range
+<<<<<<< HEAD
                 for offset in start_offset.0..end_offset.0 {
                     // Skip if remaining text is shorter than query
                     if offset + query_len > end_offset.0 {
+=======
+                for offset in start_offset..end_offset {
+                    // Skip if remaining text is shorter than query
+                    if offset + query_len > end_offset {
+>>>>>>> origin/feature/jump
                         break;
                     }
 
@@ -396,7 +406,11 @@ impl JumpBar {
 
                     let slice = &text[offset..offset + query_len];
                     if slice.eq_ignore_ascii_case(query_str) {
+<<<<<<< HEAD
                         let point = buffer_snapshot.offset_to_point(MultiBufferOffset(offset));
+=======
+                        let point = buffer_snapshot.offset_to_point(offset);
+>>>>>>> origin/feature/jump
                         let display_point = display_snapshot
                             .buffer_snapshot()
                             .anchor_after(point)
@@ -411,6 +425,7 @@ impl JumpBar {
                         let distance = dy * 1000 + dx;
 
                         // Get the next character after the match
+<<<<<<< HEAD
                         let next_char =
                             if MultiBufferOffset(offset + query_len) < buffer_snapshot.len() {
                                 let next_offset = offset + query_len;
@@ -422,6 +437,18 @@ impl JumpBar {
                             } else {
                                 None
                             };
+=======
+                        let next_char = if offset + query_len < buffer_snapshot.len() {
+                            let next_offset = offset + query_len;
+                            if text.is_char_boundary(next_offset) {
+                                text[next_offset..].chars().next()
+                            } else {
+                                None
+                            }
+                        } else {
+                            None
+                        };
+>>>>>>> origin/feature/jump
 
                         matches.push((display_point, distance, next_char));
                     }
